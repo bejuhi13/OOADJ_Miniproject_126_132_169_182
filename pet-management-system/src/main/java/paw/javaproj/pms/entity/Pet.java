@@ -3,65 +3,64 @@ package paw.javaproj.pms.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "pet")
-
+@Table(name = "pets")
 public class Pet {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long pet_id;
+	private Long id;
 	
-	@Column(name = "Pet Name", nullable = false)
-	private String pet_name;
+	@Column(name = "pet_name")
+	private String petName;
 	
-	@Column(name = "Pet Breed")
-	private String pet_breed;
+	@Column(name = "pet_breed")
+	private String petBreed;
 	
-	@Column(name = "Pet Owner")
-	private String pet_owner;
+	@Column(name = "pet_owner")
+	private String petOwner;
 	
-	@Column(name = "Pet Medical History")
-	private String pet_medHistory;
+	@Column(name = "pet_medHistory")
+	private String medHistory;
 	
 	public Pet() {
 		
 	}
 	
-	public Pet(String pet_name, String pet_breed, String pet_owner, String pet_medHistory) {
+	public Pet(String petName, String petBreed, String petOwner, String medHistory) {
 		super();
-		this.pet_name = pet_name;
-		this.pet_breed = pet_breed;
-		this.pet_owner = pet_owner;
-		this.pet_medHistory = pet_medHistory;
+		this.petName = petName;
+		this.petBreed = petBreed;
+		this.petOwner = petOwner;
+		this.medHistory = medHistory;
 	}
-	public Long getPetId() {
-		return pet_id;
+	public Long getId() {
+		return id;
 	}
-	public void setPetId(Long pet_id) {
-		this.pet_id = pet_id;
+	public void setId(Long petId) {
+		this.id = petId;
 	}
 	public String getPetName() {
-		return pet_name;
+		return petName;
 	}
-	public void setPetName(String pet_name) {
-		this.pet_name = pet_name;
+	public void setPetName(String petName) {
+		this.petName = petName;
 	}
 	public String getPetBreed() {
-		return pet_breed;
+		return petBreed;
 	}
-	public void setPetBreed(String pet_breed) {
-		this.pet_breed = pet_breed;
+	public void setPetBreed(String petBreed) {
+		this.petBreed = petBreed;
 	}
 	public String getPetOwner() {
-		return pet_owner;
+		return petOwner;
 	}
-	public void setPetOwner(String pet_owner) {
-		this.pet_owner = pet_owner;
+	public void setPetOwner(String petOwner) {
+		this.petOwner = petOwner;
 	}
 	public String getMedHistory() {
-		return pet_medHistory;
+		return medHistory;
 	}
-	public void setMedHistory(String pet_medHistory) {
-		this.pet_medHistory = pet_medHistory;
+	public void setMedHistory(String medHistory) {
+		this.medHistory = medHistory;
 	}
 }

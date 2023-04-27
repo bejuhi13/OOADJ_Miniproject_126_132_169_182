@@ -4,64 +4,63 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "users")
-
 public class User {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long user_id;
+	private Long userId;
 	
-	@Column(name = "Username", nullable = false)
-	private String user_name;
+	@Column(name = "user_name", nullable = false)
+	private String userName;
 	
-	@Column(name = "User Email", nullable=false)
-	private String user_email;
+	@Column(name = "user_email")
+	private String userEmail;
 	
-	@Column(name = "User Password", nullable = false)
-	private String user_pwd;
+	@Column(name = "user_pwd")
+	private String userPwd;
 	
-	@Column(name = "User Type", nullable = false)
-	private String user_type;
+	@Column(name = "user_type")
+	private String userType;
 	
 	public User() {
 		
 	}
 	
-	public User(String user_name, String user_email, String user_pwd, String user_type) {
+	public User(String userName, String userEmail, String userPwd, String userType) {
 		super();
-		this.user_name = user_name;
-		this.user_email = user_email;
-		this.user_pwd = user_pwd;
-		this.user_type = user_type;
+		this.userName = userName;
+		this.userEmail = userEmail;
+		this.userPwd = userPwd;
+		this.userType = userType;
 	}
-	public Long getUserId() {
-		return user_id;
+	public Long getId() {
+		return userId;
 	}
-	public void setUserId(Long user_id) {
-		this.user_id = user_id;
+	public void setId(Long userId) {
+		this.userId = userId;
 	}
 	public String getUserName() {
-		return user_name;
+		return userName;
 	}
-	public void setUserName(String user_name) {
-		this.user_name = user_name;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 	public String getUserEmail() {
-		return user_email;
+		return userEmail;
 	}
-	public void setUserEmail(String user_email) {
-		this.user_email = user_email;
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
 	}
 	public String getUserPwd() {
-		return user_pwd;
+		return userPwd;
 	}
-	public void setUserPwd(String user_pwd) {
-		this.user_pwd = user_pwd;
+	public void setUserPwd(String userPwd) {
+		this.userPwd = userPwd;
 	}
 	public String getUserType() {
-		return user_type;
+		return userType;
 	}
-	public void setUserType(String user_type) {
-		this.user_type = user_type;
+	public void setUserType(String userType) {
+		this.userType = userType;
 	}
 }

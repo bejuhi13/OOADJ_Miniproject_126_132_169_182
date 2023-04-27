@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<title>Pet Management System</title>
+<title>Pawtropica</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -11,7 +11,7 @@
 <body>
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
   <!-- Brand -->
-  <a class="navbar-brand" href="#">Pawtropica</a>
+  <a class="navbar-brand" th:href="@{/pets}">Pawtropica</a>
 
   <!-- Toggler/collapsibe Button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -22,10 +22,7 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" th:href="@{/pets}">Pet Management</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" th:href="@{/pets}">Admin Management</a>
+        <a class="nav-link" th:href="@{/pets}">Pet Profiles</a>
       </li>
     </ul>
   </div>
@@ -38,31 +35,33 @@
 		
 		<div class = "row">
 			<div class = "col-lg-3">
-				<a th:href = "@{/pets/new}" class = "btn btn-primary btn-sm mb-3"> Add Pet</a>
+				<a th:href = "@{/pets/new}" class = "btn btn-primary btn-sm mb-3"> Add Pets</a>
 			</div>
 		</div>
 		<table class = "table table-striped table-bordered">
 			<thead class = "table-dark">
 				<tr>
-					<th> Pet Name</th>
-					<th> Owner Name</th>
-					<th> Pet Breed </th>
-					<th> Actions </th>
+					<th> Pet's Name</th>
+					<th> Pet's Breed</th>
+					<th> Pet's Owner </th>
+					<th> Pet's Medical History </th>
+					<th> Actions</th>
 				</tr>
 			</thead>
 			
 			<tbody>
 				<tr th:each = "pet: ${pets}">
 					<td th:text = "${pet.petName}"></td>
-					<td th:text = "${pet.ownerName}"></td>
 					<td th:text = "${pet.petBreed}"></td>
+					<td th:text = "${pet.petOwner}"></td>
+					<td th:text = "${pet.medHistory}"></td>
 					<td>
 						<a th:href = "@{/pets/edit/{id}(id=${pet.id})}"
 						 class = "btn btn-primary">Update</a>
 						
 						<a th:href = "@{/pets/{id}(id=${pet.id})}"
 						 class = "btn btn-danger">Delete</a>
-						 
+	 
 					</td>
 				</tr>
 			</tbody>

@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import paw.javaproj.pms.entity.Pet;
 import paw.javaproj.pms.repository.PetRepository;
 import paw.javaproj.pms.service.PetService;
-
 @Service
 public class PetServiceImpl implements PetService{
 
@@ -29,8 +28,8 @@ public class PetServiceImpl implements PetService{
 	}
 
 	@Override
-	public Pet getPetById(Long pet_id) {
-		return petRepository.findById(pet_id).get();
+	public Pet getPetById(Long petId) {
+		return petRepository.findById(petId).get();
 	}
 
 	@Override
@@ -39,9 +38,8 @@ public class PetServiceImpl implements PetService{
 	}
 
 	@Override
-	public void deletePetById(Long pet_id) {
-		petRepository.deleteById(pet_id);	
+	public void deletePetById(Long petId) {
+		petRepository.deleteById(petId);	
 	}
 
 }
-

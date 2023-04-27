@@ -22,7 +22,10 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" th:href="@{/pets}">Pawtropica</a>
+        <a class="nav-link" th:href="@{/pets}">Pet Profiles</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/users}">User Profiles</a>
       </li>
     </ul>
   </div>
@@ -32,48 +35,50 @@
 	<div class = "container">
 		<div class = "row">
 			<div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
-				<h1 class = "text-center"> Update Pet Profile </h1>
+				<h1 class = "text-center"> Add New User </h1>
 				<div class = "card-body">
-					<form th:action="@{/pets/{id} (id=${pet.id})}" th:object = "${pet}" method="POST">
+					<form th:action="@{/users}" th:object = "${user}" method="POST">
 						<div class ="form-group">
-							<label> Pet's Name </label>
+							<label> User Name </label>
 							<input
 							type = "text"
-							name = "petName"
-							th:field = "*{petName}"
+							name = "userName"
+							th:field = "*{userName}"
 							class = "form-control"
-							placeholder="Enter Pet's Name" 
+							placeholder="Enter User Name" 
 							/>
 						</div>
 						
 						<div class ="form-group">
-							<label> Pet's Breed </label>
+							<label> User's Email </label>
 							<input
 							type = "text"
-							name = "petBreed"
-							th:field = "*{petBreed}"
+							name = "userEmail"
+							th:field = "*{userEmail}"
 							class = "form-control"
-							placeholder="Enter Pet's Breed" 
+							placeholder="Enter Email" 
 							/>
 						</div>
+						
 						<div class ="form-group">
-							<label> Pet's Owner </label>
+							<label> User Password </label>
 							<input
-							type = "text"
-							name = "petOwner"
-							th:field = "*{petOwner}"
+							type = "password"
+							name = "userPassword"
+							th:field = "*{userPassword}"
 							class = "form-control"
-							placeholder="Enter Pet's Owner's Name" 
+							placeholder="Enter Password" 
 							/>
 						</div>
+						
 						<div class ="form-group">
-							<label> Medical History </label>
+							<label> User Type</label>
 							<input
 							type = "text"
-							name = "medHistory"
-							th:field = "*{medHistory}"
+							name = "userType"
+							th:field = "*{userType}"
 							class = "form-control"
-							placeholder="Enter Pet's Medical History" 
+							placeholder="Enter User Type" 
 							/>
 						</div>
 						

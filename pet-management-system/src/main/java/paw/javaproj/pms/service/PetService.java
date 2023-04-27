@@ -9,9 +9,9 @@ public interface PetService {
 	
 	Pet savePet(Pet pet);
 	
-	Pet getPetById(Long pet_id);
+	Pet getPetById(Long id);
 	
 	Pet updatePet(Pet pet);
 	
-	void deletePetById(Long pet_id);
+	void deletePetById(Long id);
 }
