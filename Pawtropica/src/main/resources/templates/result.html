@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Pawtropica</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<style>
+			body {
+			  margin: 0;
+			  padding: 0;
+			  font-family: sans-serif;
+			  background-image: url("../images/welcome.jfif");
+			  background-size: 200vh;
+			  }
+			.program-cards {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				margin-top: 20px;
+			}
+	
+			.program-card {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				background-color: #fff;
+				border-radius: 10px;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+				padding: 20px;
+				margin: 10px;
+				width: 300px;
+				height: 400px;
+			}
+			.program-card h2 {
+				margin: 0;
+				font-size: 24px;
+				margin-bottom: 10px;
+			}
+	
+			.program-card p {
+				margin: 0;
+				font-size: 18px;
+				margin-top: 10px;
+			}
+			  
+		</style>
+</head>
+<body>
+		<header>
+			<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+			  	<!-- Brand -->
+			  	<a class="navbar-brand" href="#"> Pawtropica</a>
+	
+			  	<!-- Toggler/collapsibe Button -->
+			  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			    	<span class="navbar-toggler-icon"></span>
+			  	</button>
+			
+			 	<!-- Navbar links -->
+			  	<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			   		<ul class="navbar-nav">
+			      		<li class="nav-item">
+			        		<a class="nav-link" th:href="@{/pets}">Pet Profiles</a>     
+			      		</li>
+			    	</ul>
+			  	</div>
+			</nav>
+			<br>
+			<br>
+		</header>
+		<main>
+			<div class="program-cards" th:object="${pet}">
+				<div class="program-card">
+					<hr><h2 th:text = "${pet.getPetTypeFact()}"></h2><hr>				
+					
+				</div>
+				
+			</div>
+		</main>
+	</body>
+</html>
